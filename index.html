@@ -1,42 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My E-Commerce Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Social Media</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>My E-Commerce Store</h1>
+<header>
+    <h1>💬 ConnectHub</h1>
+    <span>🏠 Home</span>
+</header>
 
-    <div class="product">
-        <h2>T-Shirt</h2>
-        <p>Price: ₹499</p>
-        <button onclick="addToCart('T-Shirt')">Add to Cart</button>
-    </div>
+<div class="container">
 
-    <div class="product">
-        <h2>Shoes</h2>
-        <p>Price: ₹999</p>
-        <button onclick="addToCart('Shoes')">Add to Cart</button>
-    </div>
+    <section class="profile">
+        <div class="avatar">👤</div>
+        <div>
+            <h2>Subhashini</h2>
+            <p>Web Developer | Student</p>
+            <button onclick="followUser()">Follow</button>
+            <span id="followText"> 0 Followers</span>
+        </div>
+    </section>
 
-    <div class="product">
-        <h2>Watch</h2>
-        <p>Price: ₹799</p>
-        <button onclick="addToCart('Watch')">Add to Cart</button>
-    </div>
+    <section class="create-post">
+        <h2>Create a Post</h2>
+        <textarea id="postText" placeholder="What's on your mind?"></textarea>
+        <button onclick="createPost()">Post</button>
+    </section>
 
-    <div class="product">
-        <h2>Headphones</h2>
-        <p>Price: ₹699</p>
-        <button onclick="addToCart('Headphones')">Add to Cart</button>
-    </div>
+    <section id="posts">
 
-    <script>
-        function addToCart(product) {
-            alert(product + " added to cart!");
-        }
-    </script>
+        <div class="post">
+            <h3>👤 Subhashini</h3>
+            <p>Welcome to my social media app! 🎉</p>
+
+            <button onclick="likePost(this)">❤️ Like <span>0</span></button>
+
+            <input type="text" placeholder="Write a comment..."
+                   onkeydown="addComment(event, this)">
+
+            <div class="comments"></div>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
