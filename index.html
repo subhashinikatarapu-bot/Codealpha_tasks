@@ -3,52 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Social Media</title>
+    <title>Project Management Tool</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>💬 ConnectHub</h1>
-    <span>🏠 Home</span>
+    <h1>📋 Project Manager</h1>
+    <p>Manage Projects & Tasks</p>
 </header>
 
 <div class="container">
 
-    <section class="profile">
-        <div class="avatar">👤</div>
-        <div>
-            <h2>Subhashini</h2>
-            <p>Web Developer | Student</p>
-            <button onclick="followUser()">Follow</button>
-            <span id="followText"> 0 Followers</span>
-        </div>
+    <!-- Create Project -->
+    <section class="box">
+        <h2>📁 Create Project</h2>
+
+        <input type="text" id="projectName"
+               placeholder="Enter project name">
+
+        <button onclick="createProject()">Create Project</button>
+
+        <div id="projects"></div>
     </section>
 
-    <section class="create-post">
-        <h2>Create a Post</h2>
-        <textarea id="postText" placeholder="What's on your mind?"></textarea>
-        <button onclick="createPost()">Post</button>
+    <!-- Add Task -->
+    <section class="box">
+        <h2>📝 Add Task</h2>
+
+        <input type="text" id="taskName"
+               placeholder="Enter task">
+
+        <input type="text" id="assignedUser"
+               placeholder="Assign to user">
+
+        <button onclick="addTask()">Add Task</button>
     </section>
 
-    <section id="posts">
+    <!-- Tasks -->
+    <section class="box">
+        <h2>✅ Tasks</h2>
 
-        <div class="post">
-            <h3>👤 Subhashini</h3>
-            <p>Welcome to my social media app! 🎉</p>
-
-            <button onclick="likePost(this)">❤️ Like <span>0</span></button>
-
-            <input type="text" placeholder="Write a comment..."
-                   onkeydown="addComment(event, this)">
-
-            <div class="comments"></div>
-        </div>
-
+        <div id="taskList"></div>
     </section>
 
 </div>
+
+<footer>
+    <p>© 2026 Project Management Tool</p>
+</footer>
 
 <script src="script.js"></script>
 
